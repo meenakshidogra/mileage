@@ -10,7 +10,11 @@ angular.module('readings').controller('ReadingsController',
 		$scope.create = function() {
 			// Create new Reading object
 			var reading = new Readings ({
-				name: this.name
+                odoreading: this.odoreading,
+                fuelreading: this.fuelreading,
+                distanceunit: this.distanceunit,
+                fuelunit: this.fuelunit,
+                car: this.selectedcar
 			});
 
 			// Redirect after save
@@ -18,7 +22,11 @@ angular.module('readings').controller('ReadingsController',
 				$location.path('readings/' + response._id);
 
 				// Clear form fields
-				$scope.name = '';
+               $scope.odoreading = '';
+               $scope.fuelreading = '';
+               $scope.distanceunit = '';
+               $scope.fuelunit = '';
+               $scope.car = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});

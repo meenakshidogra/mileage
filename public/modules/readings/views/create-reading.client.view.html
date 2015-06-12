@@ -30,28 +30,15 @@
                             </div>
                         </div>
                     </div>
-                    <!--
-                    <div class="list-group">
-                        <a data-ng-repeat="car in cars" data-ng-href="#!/cars/{{car._id}}" class="list-group-item">
-                            <small class="list-group-item-text">
-                                Posted on
-                                <span data-ng-bind="car.created | date:'medium'"></span>
-                                by
-                                <span data-ng-bind="car.user.displayName"></span>
-                            </small>
-                            <h4 class="list-group-item-heading" data-ng-bind="car.name"></h4>
-                        </a>
-                    </div>
-                    -->
                     <div class="form-group" >
                         <label>Select your car first:</label>
-                        <select ng-options="car.name for car in cars" class="btn btn-default dropdown-toggle" ng-model="selected">
+                        <select ng-options="car.name for car in cars" class="btn btn-default dropdown-toggle" data-ng-model="selectedcar">
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="hidden" data-ng-model="mileage" value="{{Number(odoreading)/Number(fuelreading)}}">
                         <input type="submit" class="btn btn-default">
                     </div>
+
                     <div data-ng-show="error" class="text-danger">
                         <strong data-ng-bind="error"></strong>
                     </div>

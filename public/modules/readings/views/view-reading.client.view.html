@@ -1,6 +1,10 @@
 <section data-ng-controller="ReadingsController" data-ng-init="findOne()">
+    <div class="container">
 	<div class="page-header">
-		<h1 data-ng-bind="reading.odoreading"></h1>
+        <h1>
+            <span data-ng-bind="reading.odoreading"></span>
+            <span data-ng-bind="reading.distanceunit"></span>
+        </h1>
 	</div>
 	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == reading.user._id))">
 		<a class="btn btn-primary" href="/#!/readings/{{reading._id}}/edit">
@@ -18,4 +22,14 @@
 			<span data-ng-bind="reading.car.name"></span>
 		</em>
 	</small>
+    <p>
+	<small>
+        Fuel reading
+		<em class="text-muted">
+			<span data-ng-bind="reading.fuelreading"></span>
+			<span data-ng-bind="reading.fuelunit"></span>
+		</em>
+	</small>
+    </p>
+    </div>
 </section>
