@@ -32,13 +32,13 @@
                     </div>
                     <div class="form-group" >
                         <label>Select your car first:</label>
-                        <select ng-options="car.name for car in cars" class="btn btn-default dropdown-toggle" data-ng-model="selectedcar">
+                        <select ng-options="car.name for car in cars" class="btn btn-default dropdown-toggle" ng-model="selectedcar">
+                            <option value="">Select a car</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-default">
                     </div>
-
                     <div data-ng-show="error" class="text-danger">
                         <strong data-ng-bind="error"></strong>
                     </div>

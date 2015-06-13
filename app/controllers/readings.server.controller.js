@@ -14,6 +14,7 @@ var mongoose = require('mongoose'),
 exports.create = function(req, res) {
 	var reading = new Reading(req.body);
 	reading.user = req.user;
+	reading.car = req.body.car;
 
 	reading.save(function(err) {
 		if (err) {
@@ -72,8 +73,8 @@ exports.delete = function(req, res) {
 /**
  * List of Readings
  */
-exports.list = function(req, res) { 
-	Reading.find().sort('-created').populate('user', 'displayName').exec(function(err, readings) {
+exports.list = function(req, res) {
+	Reading.find().sort('-created').populate('user', 'displayName').populate('car', 'name').exec(function(err, readings) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
@@ -87,8 +88,8 @@ exports.list = function(req, res) {
 /**
  * Reading middleware
  */
-exports.readingByID = function(req, res, next, id) { 
-	Reading.findById(id).populate('user', 'displayName').exec(function(err, reading) {
+exports.readingByID = function(req, res, next, id) {
+	Reading.findById(id).populate('user', 'displayName').populate('car', 'name').exec(function(err, reading) {
 		if (err) return next(err);
 		if (! reading) return next(new Error('Failed to load Reading ' + id));
 		req.reading = reading ;

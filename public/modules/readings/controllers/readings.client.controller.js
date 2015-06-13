@@ -14,7 +14,7 @@ angular.module('readings').controller('ReadingsController',
                 fuelreading: this.fuelreading,
                 distanceunit: this.distanceunit,
                 fuelunit: this.fuelunit,
-                car: this.selectedcar
+                car: this.selectedcar._id
 			});
 
 			// Redirect after save

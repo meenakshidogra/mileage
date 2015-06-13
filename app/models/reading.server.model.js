@@ -33,7 +33,12 @@ var ReadingSchema = new Schema({
     car: {
         type: Schema.ObjectId,
         ref: 'Car'
+    },
+    user: {
+        type: Schema.ObjectId,
+        ref: 'User'
     }
+
 });
 
 mongoose.model('Reading', ReadingSchema);
