@@ -32,7 +32,7 @@ exports.create = function(req, res) {
  */
 exports.read = function(req, res) {
     console.log(req.reading);
-    /*TODO: calculate the fuel economy here and put it in req.reading.mileage variable*/
+    /*calculate the fuel economy here and put it in req.reading.mileage variable*/
     /**
     ** getMileage
     **
@@ -45,7 +45,7 @@ exports.read = function(req, res) {
     var getMileage = function (newReading, oldReading, fuelAmount) {
         var distanceCovered = 0;
         if (isNumber(newReading) && isNumber(oldReading)) {
-                        distanceCovered = Number(newReading) - Number(oldReading);
+            distanceCovered = Number(newReading) - Number(oldReading);
         }
         if(isNumber(fuelAmount)) {
             //mileage is distance covered divided by the fuelAmount spent
@@ -72,14 +72,8 @@ exports.read = function(req, res) {
     .limit(1)
     .sort('-created')
     .exec(function(err, post){
-        console.log( 'post'  );
-        console.log( post  );
-        console.log(req.reading.odoreading);
-        console.log(post[0].odoreading);
         var mileage = getMileage(req.reading.odoreading, post[0].odoreading, req.reading.fuelreading);
-        console.log('mileage'+ mileage);
-        req.reading.mileage = mileage || null;
-        res.jsonp(req.reading);
+        res.jsonp({'data':req.reading, 'mileage': mileage});
     });
 
 };
@@ -124,6 +118,7 @@ exports.delete = function(req, res) {
  * List of Readings
  */
 exports.list = function(req, res) {
+    /*Add the condition to show the readings of the logged in user only*/
 	Reading.find().sort('-created').populate('user', 'displayName').populate('car', 'name').exec(function(err, readings) {
 		if (err) {
 			return res.status(400).send({

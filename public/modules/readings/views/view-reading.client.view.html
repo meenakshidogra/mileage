@@ -2,12 +2,13 @@
     <div class="container">
 	<div class="page-header">
         <h1>
-            <span data-ng-bind="reading.odoreading"></span>
-            <span data-ng-bind="reading.distanceunit"></span>
+            <span data-ng-bind="reading.mileage"></span>
+            <span data-ng-bind="reading.data.distanceunit"></span>/
+            <span data-ng-bind="reading.data.fuelunit"></span>
         </h1>
 	</div>
-	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == reading.user._id))">
-		<a class="btn btn-primary" href="/#!/readings/{{reading._id}}/edit">
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == reading.data.user._id))">
+		<a class="btn btn-primary" href="/#!/readings/{{reading.data._id}}/edit">
 			<i class="glyphicon glyphicon-edit"></i>
 		</a>
 		<a class="btn btn-primary" data-ng-click="remove();">
@@ -16,18 +17,21 @@
 	</div>
 	<small>
 		<em class="text-muted">
+            <span data-ng-bind="reading.data.odoreading"></span>
+            -
+            <span data-ng-bind="reading.data.fuelreading"></span>
 			Posted on
-			<span data-ng-bind="reading.created | date:'mediumDate'"></span>
+			<span data-ng-bind="reading.data.created | date:'mediumDate'"></span>
 			for
-			<span data-ng-bind="reading.car.name"></span>
+			<span data-ng-bind="reading.data.car.name"></span>
 		</em>
 	</small>
     <p>
 	<small>
         Fuel reading
 		<em class="text-muted">
-			<span data-ng-bind="reading.fuelreading"></span>
-			<span data-ng-bind="reading.fuelunit"></span>
+			<span data-ng-bind="reading.data.fuelreading"></span>
+			<span data-ng-bind="reading.data.fuelunit"></span>
 		</em>
 	</small>
     </p>
