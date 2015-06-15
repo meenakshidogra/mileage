@@ -31,7 +31,57 @@ exports.create = function(req, res) {
  * Show the current Reading
  */
 exports.read = function(req, res) {
-	res.jsonp(req.reading);
+    console.log(req.reading);
+    /*TODO: calculate the fuel economy here and put it in req.reading.mileage variable*/
+    /**
+    ** getMileage
+    **
+    ** @desc Function to calculate the mileage of the car
+    ** @param newReading - The reading of the odometer of the car just after refill
+    ** @param oldReading - The reading of the odometer of the car last time the car was refilled
+    ** @param fuelAmount - Amount of the fuel filled to full the fule tank of the car.
+    **                     This could be red on the meter of the station pump or in the receipt
+    */
+    var getMileage = function (newReading, oldReading, fuelAmount) {
+        var distanceCovered = 0;
+        if (isNumber(newReading) && isNumber(oldReading)) {
+                        distanceCovered = Number(newReading) - Number(oldReading);
+        }
+        if(isNumber(fuelAmount)) {
+            //mileage is distance covered divided by the fuelAmount spent
+            var mileage = distanceCovered/Number(fuelAmount);
+            //return the rounded off value
+            return Math.round(mileage * 10) / 10;
+        }
+        return null;
+    };
+
+    /**
+    ** isNumber
+    **
+    ** @desc returns true if the value is positive numeric (decimal number or integer)
+    ** @param value - Any string
+    **/
+    var isNumber = function (value) {
+        return /*TODO $.isNumeric(value) &&*/ (value > 0);
+    };
+
+    Reading.find({})
+    .where('created').lt(req.reading.created)
+    /*TODO: add the conditions for same car and user*/
+    .limit(1)
+    .sort('-created')
+    .exec(function(err, post){
+        console.log( 'post'  );
+        console.log( post  );
+        console.log(req.reading.odoreading);
+        console.log(post[0].odoreading);
+        var mileage = getMileage(req.reading.odoreading, post[0].odoreading, req.reading.fuelreading);
+        console.log('mileage'+ mileage);
+        req.reading.mileage = mileage || null;
+        res.jsonp(req.reading);
+    });
+
 };
 
 /**
