@@ -68,6 +68,7 @@ exports.read = function(req, res) {
 
     Reading.find({})
     .where('created').lt(req.reading.created)
+    .where('car').equals(req.reading.car)
     /*TODO: add the conditions for same car and user*/
     .limit(1)
     .sort('-created')
