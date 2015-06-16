@@ -1,7 +1,10 @@
 <section data-ng-controller="ReadingsController" data-ng-init="findOne()">
     <div class="container">
 	<div class="page-header">
-        <h1>
+        <h1 ng-if="reading.mileage == 0 || !reading.mileage">
+            No old data.
+        </h1>
+            <h1 ng-if="!!reading.mileage && reading.mileage != 0">
             <span data-ng-bind="reading.mileage"></span>
             <span data-ng-bind="reading.data.distanceunit"></span>/
             <span data-ng-bind="reading.data.fuelunit"></span>
@@ -16,10 +19,9 @@
 		</a>
 	</div>
 	<small>
+        Odometer reading
 		<em class="text-muted">
-            <span data-ng-bind="reading.data.odoreading"></span>
-            -
-            <span data-ng-bind="reading.data.fuelreading"></span>
+            <span data-ng-bind="reading.data.odoreading"></span>.
 			Posted on
 			<span data-ng-bind="reading.data.created | date:'mediumDate'"></span>
 			for

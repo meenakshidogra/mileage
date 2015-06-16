@@ -72,7 +72,10 @@ exports.read = function(req, res) {
     .limit(1)
     .sort('-created')
     .exec(function(err, post){
-        var mileage = getMileage(req.reading.odoreading, post[0].odoreading, req.reading.fuelreading);
+        var mileage = 0;
+        if (post && post.length>0) {
+            mileage = getMileage(req.reading.odoreading, post[0].odoreading, req.reading.fuelreading);
+        }
         res.jsonp({'data':req.reading, 'mileage': mileage});
     });
 
