@@ -1,5 +1,5 @@
 <section data-ng-controller="HomeController">
-	<div class="container-fluid">
+	<div class="container-fluid" ng-if="!authentication.user">
         <div class="row jumbotron">
             <div class="text-center">
                 <div class="col-lg-10 center-block jumbo-inner" style="float: none;">
@@ -8,13 +8,15 @@
                     <h5>
                         Lets find out the average relationship between the distance traveled and the amount of fuel consumed by your vehicle.
                     </h5>
-                    <p ng-if="!authentication.user"><a class="btn btn-primary btn-lg" href="#" role="button">Let's do it!</a></p>
+                    <p><a class="btn btn-primary btn-lg" href="#" role="button">Let's do it!</a></p>
                 </div>
             </div>
         </div>
     </div>
     <div class="container" ng-if="authentication.user">
-    	This is shown only if the user is authenticated
+        <div class="page-header">
+            <h1>Please choose or add a car first</h1>
+        </div>
         <div ui-view=""></div>
         <div ui-view="cars"></div>
     </div>
