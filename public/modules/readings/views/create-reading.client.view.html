@@ -1,8 +1,9 @@
 <section data-ng-controller="ReadingsController">
     <div ng-if="!!selectedcar" class="container">
         <div class="page-header">
-            <h1>New Reading</h1>
-            <h3>{{selectedcar.name}}</h>
+            <h1>New Reading
+                <small>{{selectedcar.name}}</small>
+            </h1>
         </div>
         <div class="col-md-12">
             <form class="form-horizontal" data-ng-submit="create()" novalidate>

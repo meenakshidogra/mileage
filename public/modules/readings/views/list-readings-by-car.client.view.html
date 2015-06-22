@@ -1,19 +1,43 @@
 <section data-ng-controller="ReadingsController" data-ng-init="findByCar()">
-    <a href="/#!/readings/create/" class="btn btn-default">Add new reading</a>
-    <p>List of readings of this car </p>
+    <div class="clearfix">
+        <p class="pull-left lead">List of readings of this car </p>
+        <a href="/#!/readings/create/" class="pull-right btn btn-primary">Add new reading</a>
+    </div>
     <div class="container">
-        <div class="list-group">
-            <a data-ng-repeat="reading in readings" data-ng-href="#!/readings/{{reading._id}}" class="list-group-item">
-                <small class="list-group-item-text">
-                    Posted on
-                    <span data-ng-bind="reading.created | date:'medium'"></span>
-                    for
-                    <span data-ng-bind="reading.car.name"></span>
-                </small>
-                <h4 class="list-group-item-heading" data-ng-bind="reading.odoreading"></h4>
-                <p >{{reading.mileage}}</p>
-            </a>
-        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Posted on</th>
+                    <th>Reading</th>
+                    <th>Fuel filled</th>
+                    <th>Mileage</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="reading in readings" >
+                    <td>
+                        {{$index+1}}
+                    </td>
+                    <td>
+                        <span data-ng-bind="reading.created | date:'medium'"></span>
+                    </td>
+                    <td>
+                        <span data-ng-bind="reading.odoreading"></span>
+                    </td>
+                    <td>
+                        <span data-ng-bind="reading.fuelreading"></span>
+                    </td>
+                    <td>
+                        <span data-ng-bind="reading.mileage"></span>
+                    </td>
+                    <td>
+                        <a data-ng-href="#!/readings/{{reading._id}}">Details</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         <div class="alert alert-warning text-center" data-ng-hide="!readings.$resolved || readings.length">
             No Readings yet, why don't you <a href="/#!/readings/create/{{carid}}">create one</a>?
         </div>
