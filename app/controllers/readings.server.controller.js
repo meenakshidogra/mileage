@@ -181,15 +181,3 @@ exports.hasAuthorization = function(req, res, next) {
 	}
 	next();
 };
-
-/**
- * Reading authorization middleware
- */
-exports.hasSelectedCar = function(req, res, next) {
-	if (req.reading.car !== req.car.id) {
-		return res.status(403).send('Car is not selected');
-	}
-	next();
-};
-
-

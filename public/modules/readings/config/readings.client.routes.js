@@ -16,9 +16,6 @@ angular.module('readings').config(['$stateProvider',
 		state('createReading', {
 			url: '/readings/create/',
 			templateUrl: 'modules/readings/views/create-reading.client.view.html'
-            //controller: function($scope, $stateParams) {
-                //$scope.carid = $stateParams.carId;
-            //}
         }).
 		state('viewReading', {
 			url: '/readings/:readingId',

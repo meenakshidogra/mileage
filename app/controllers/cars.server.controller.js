@@ -29,7 +29,7 @@ exports.create = function(req, res) {
 /**
  * Show the current Car
  */
-exports.read = function(req, res, next) {
+exports.read = function(req, res) {
 	res.jsonp(req.car);
 };
 
