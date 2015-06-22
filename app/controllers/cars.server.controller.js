@@ -72,7 +72,7 @@ exports.delete = function(req, res) {
 /**
  * List of Cars
  */
-exports.list = function(req, res) { 
+exports.list = function(req, res) {
 	Car.find().sort('-created').populate('user', 'displayName').exec(function(err, cars) {
 		if (err) {
 			return res.status(400).send({
@@ -87,7 +87,7 @@ exports.list = function(req, res) {
 /**
  * Car middleware
  */
-exports.carByID = function(req, res, next, id) { 
+exports.carByID = function(req, res, next, id) {
 	Car.findById(id).populate('user', 'displayName').exec(function(err, car) {
 		if (err) return next(err);
 		if (! car) return next(new Error('Failed to load Car ' + id));

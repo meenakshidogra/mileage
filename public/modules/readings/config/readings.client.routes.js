@@ -9,10 +9,14 @@ angular.module('readings').config(['$stateProvider',
 			url: '/readings',
 			templateUrl: 'modules/readings/views/list-readings.client.view.html'
 		}).
-		state('createReading', {
-			url: '/readings/create',
-			templateUrl: 'modules/readings/views/create-reading.client.view.html'
+        state('listReadingsByCar', {
+			url: '/readings/car/:carId',
+			templateUrl: 'modules/readings/views/list-readings-by-car.client.view.html'
 		}).
+		state('createReading', {
+			url: '/readings/create/',
+			templateUrl: 'modules/readings/views/create-reading.client.view.html'
+        }).
 		state('viewReading', {
 			url: '/readings/:readingId',
 			templateUrl: 'modules/readings/views/view-reading.client.view.html'
