@@ -2,10 +2,11 @@
 
 // Readings controller
 angular.module('readings').controller('ReadingsController',
-      ['$scope', '$stateParams', '$location', 'Authentication', 'Readings', 'Cars',
-	function($scope, $stateParams, $location, Authentication, Readings, Cars) {
+      ['$scope', '$stateParams','$http', '$location', 'Authentication', 'Readings', 'Cars', 'Shared',
+	function($scope, $stateParams, $http, $location, Authentication, Readings, Cars, Shared) {
 		$scope.authentication = Authentication;
         $scope.cars = Cars.query();
+        $scope.selectedcar = Shared.getSelectedCar();
 		// Create new Reading
 		$scope.create = function() {
 			// Create new Reading object
@@ -71,5 +72,17 @@ angular.module('readings').controller('ReadingsController',
 				readingId: $stateParams.readingId
 			});
 		};
+
+        //Find a list of reading based on the carID
+        $scope.findByCar = function() {
+            console.log($scope.carid);
+            $http.get('readings/car/'+$scope.carid).
+                success(function(response) {
+                    $scope.readings = response
+                }).error(function() {
+
+                });
+            //$scope.readings =
+        }
 	}
 ]);

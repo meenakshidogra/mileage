@@ -1,8 +1,8 @@
 'use strict';
 
 // Cars controller
-angular.module('cars').controller('CarsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Cars',
-	function($scope, $stateParams, $location, Authentication, Cars) {
+angular.module('cars').controller('CarsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Cars', 'Shared',
+	function($scope, $stateParams, $location, Authentication, Cars, Shared) {
 		$scope.authentication = Authentication;
 
 		// Create new Car
@@ -25,7 +25,7 @@ angular.module('cars').controller('CarsController', ['$scope', '$stateParams', '
 
 		// Remove existing Car
 		$scope.remove = function(car) {
-			if ( car ) { 
+			if ( car ) {
 				car.$remove();
 
 				for (var i in $scope.cars) {
@@ -58,9 +58,10 @@ angular.module('cars').controller('CarsController', ['$scope', '$stateParams', '
 
 		// Find existing Car
 		$scope.findOne = function() {
-			$scope.car = Cars.get({ 
+			$scope.car = Cars.get({
 				carId: $stateParams.carId
 			});
+            Shared.setSelectedCar($scope.car);
 		};
 	}
 ]);

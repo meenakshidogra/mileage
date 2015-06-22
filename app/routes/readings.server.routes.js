@@ -9,6 +9,9 @@ module.exports = function(app) {
 		.get(readings.list)
 		.post(users.requiresLogin, readings.create);
 
+    app.route('/readings/car/:carId')
+        .get(readings.listByCar)
+
 	app.route('/readings/:readingId')
 		.get(readings.read)
 		.put(users.requiresLogin, readings.hasAuthorization, readings.update)
@@ -16,4 +19,5 @@ module.exports = function(app) {
 
 	// Finish by binding the Reading middleware
 	app.param('readingId', readings.readingByID);
+	app.param('carId', readings.readingsByCarID);
 };

@@ -1,0 +1,21 @@
+<section data-ng-controller="ReadingsController" data-ng-init="findByCar()">
+    <a href="/#!/readings/create/" class="btn btn-default">Add new reading</a>
+    <p>List of readings of this car </p>
+    <div class="container">
+        <div class="list-group">
+            <a data-ng-repeat="reading in readings" data-ng-href="#!/readings/{{reading._id}}" class="list-group-item">
+                <small class="list-group-item-text">
+                    Posted on
+                    <span data-ng-bind="reading.created | date:'medium'"></span>
+                    for
+                    <span data-ng-bind="reading.car.name"></span>
+                </small>
+                <h4 class="list-group-item-heading" data-ng-bind="reading.odoreading"></h4>
+                <p >{{reading.mileage}}</p>
+            </a>
+        </div>
+        <div class="alert alert-warning text-center" data-ng-hide="!readings.$resolved || readings.length">
+            No Readings yet, why don't you <a href="/#!/readings/create/{{carid}}">create one</a>?
+        </div>
+    </div>
+</section>

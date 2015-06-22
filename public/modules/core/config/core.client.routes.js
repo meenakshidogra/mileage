@@ -19,11 +19,6 @@ angular.module('core')
                 'cars@home': {
                     templateUrl: 'modules/cars/views/list-cars.client.view.html'
                 }
-
-                //// another child view
-                //'readings@home': {
-                    //templateUrl: 'modules/core/views/home.client.view.html'
-                //}
             }
         });
     }

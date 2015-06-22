@@ -135,6 +135,32 @@ exports.list = function(req, res) {
 };
 
 /**
+ * List of Readings by Car
+ */
+exports.listByCar = function(req, res) {
+    res.jsonp(req.readings);
+};
+
+/**
+ *
+ */
+exports.readingsByCarID = function(req, res, next, carid) {
+    console.log(carid);
+    /*Add the condition to show the readings of the logged in user only*/
+	Reading.find()
+    .where('car').equals(carid)
+    .sort('-created').populate('user', 'displayName')
+    .exec(function(err, readings) {
+        console.log(readings);
+		if (err) return next(err);
+		if (! readings) return next(new Error('Failed to load Readings for car' + carid));
+        req.readings=readings;
+        next();
+	});
+
+};
+
+/**
  * Reading middleware
  */
 exports.readingByID = function(req, res, next, id) {
@@ -155,3 +181,15 @@ exports.hasAuthorization = function(req, res, next) {
 	}
 	next();
 };
+
+/**
+ * Reading authorization middleware
+ */
+exports.hasSelectedCar = function(req, res, next) {
+	if (req.reading.car !== req.car.id) {
+		return res.status(403).send('Car is not selected');
+	}
+	next();
+};
+
+
