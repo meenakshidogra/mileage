@@ -53,7 +53,7 @@ angular.module('readings').controller('ReadingsController',
 		// Update existing Reading
 		$scope.update = function() {
 			var reading = $scope.reading;
-
+console.log(reading);
 			reading.$update(function() {
 				$location.path('readings/' + reading._id);
 			}, function(errorResponse) {
