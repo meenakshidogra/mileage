@@ -1,6 +1,9 @@
 <section data-ng-controller="ReadingsController" data-ng-init="findByCar()">
+    <div class="row well text-center" data-ng-if="latestMileage">
+        Latest mileage for this car is <strong class="lead" data-ng-bind="latestMileage"></strong> <span data-ng-bind="latestMileageUnit"></span>
+    </div>
     <div class="clearfix">
-        <p class="pull-left lead">List of readings of this car </p>
+        <p class="pull-left lead">List of readings of this car</p>
         <a href="/#!/readings/create/" class="pull-right btn btn-primary">Add new reading</a>
     </div>
     <div class="container">
@@ -16,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr data-ng-repeat="reading in readings" >
+                <tr data-ng-if="readings.length" data-ng-repeat="reading in readings" >
                     <td>
                         {{$index+1}}
                     </td>
@@ -38,8 +41,8 @@
                 </tr>
             </tbody>
         </table>
-        <div class="alert alert-warning text-center" data-ng-hide="!readings.$resolved || readings.length">
-            No Readings yet, why don't you <a href="/#!/readings/create/{{carid}}">create one</a>?
+        <div class="alert alert-warning text-center" data-ng-if="!readings.length">
+            No Readings yet, why don't you <a href="/#!/readings/create/">create one</a>?
         </div>
     </div>
 </section>

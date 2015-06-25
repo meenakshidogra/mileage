@@ -32,12 +32,6 @@
                             </div>
                         </div>
                     </div>
-                    <!--<div class="form-group" >-->
-                        <!--<label>Select your car first:</label>-->
-                        <!--<select ng-options="car.name for car in cars" class="btn btn-default dropdown-toggle" ng-model="selectedcar">-->
-                            <!--<option value="">Select a car</option>-->
-                        <!--</select>-->
-                    <!--</div>-->
                     <div class="form-group">
                         <input type="submit" class="btn btn-default">
                     </div>
@@ -48,5 +42,8 @@
             </form>
         </div>
     </div>
-    <div class="container" ng-if="!selectedcar">First select a car</div>
+    <div class="alert alert-warning text-center" data-ng-if="!selectedcar">
+        No car selected, why don't you <a href="/#!/">select or create one</a>?
+    </div>
+
 </section>
