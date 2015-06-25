@@ -1,4 +1,7 @@
 <section data-ng-controller="ReadingsController" data-ng-init="findByCar()">
+    <div class="row well text-center" data-ng-if="latestMileage">
+        Latest mileage for this car is <strong class="lead" data-ng-bind="latestMileage"></strong> <span data-ng-bind="latestMileageUnit"></span>
+    </div>
     <div class="clearfix">
         <p class="pull-left lead">List of readings of this car</p>
         <a href="/#!/readings/create/" class="pull-right btn btn-primary">Add new reading</a>
