@@ -1,6 +1,6 @@
 <section data-ng-controller="CarsController" data-ng-init="find()">
-    <div class="list-group btn-group">
-        <a href="/#!/cars/create" class="btn btn-default">Add a car</a>
+    <div class="list-group text-center">
+        <a href="/#!/cars/create" class="btn btn-primary">Add a car</a>
     </div>
     <div class="list-group">
         <a data-ng-repeat="car in cars" data-ng-href="#!/cars/{{car._id}}" class="list-group-item" data-ng-show="((authentication.user) && (authentication.user._id == car.user._id))">
