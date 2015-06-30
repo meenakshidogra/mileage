@@ -6,12 +6,12 @@
             </h1>
         </div>
         <div class="col-md-12">
-            <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <form class="form-horizontal" name="newReadingForm" data-ng-submit="create()" novalidate>
                 <fieldset>
                     <div class="form-group">
                         <label for="odoreading">How many miles your car has travelled so far:</label>
                         <div class="input-group">
-                            <input id="odoreading" data-ng-model="odoreading" class="form-control" type="text" placeholder="odometer reading"/>
+                            <input id="odoreading" name="odoreading" data-ng-model="odoreading" class="form-control" type="number" required placeholder="odometer reading"/>
                             <div class="input-group-btn">
                                 <select id="distanceunit" data-ng-model="distanceunit" name="distanceunit" class="btn btn-default dropdown-toggle">
                                     <option value="mil" selected>Miles</option>
@@ -19,11 +19,15 @@
                                 </select>
                             </div>
                         </div>
+                        <p data-ng-show="newReadingForm.odoreading.$invalid && !newReadingForm.odoreading.$pristine"
+                           class="text-danger">Odometer reading is required.
+                        </p>
                     </div>
+
                     <div class="form-group">
                         <label for="fuelreading">How much fuel you just filled in your car?</label>
                         <div class="input-group">
-                            <input id="fuelreading" data-ng-model="fuelreading" type="text" class="form-control" type="text" placeholder="station pump reading"/>
+                            <input id="fuelreading" name="fuelreading" data-ng-model="fuelreading" type="number" class="form-control" required type="number" placeholder="station pump reading"/>
                             <div class="input-group-btn">
                                 <select id="fuelunit" data-ng-model="fuelunit" name="fuelunit" class="btn btn-default dropdown-toggle">
                                     <option value="galn" selected>Gallons</option>
@@ -31,12 +35,13 @@
                                 </select>
                             </div>
                         </div>
+                        <p data-ng-show="newReadingForm.fuelreading.$invalid && !newReadingForm.fuelreading.$pristine"
+                           class="text-danger">Pump reading is required.
+                        </p>
+
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary">
-                    </div>
-                    <div data-ng-show="error" class="text-danger">
-                        <strong data-ng-bind="error"></strong>
+                        <input type="submit" data-ng-disabled="newReadingForm.$invalid" class="btn btn-primary">
                     </div>
                 </fieldset>
             </form>
