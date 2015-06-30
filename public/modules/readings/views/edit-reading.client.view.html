@@ -11,9 +11,9 @@
                     <div class="form-group">
                         <label for="odoreading">How many miles your car has travelled so far:</label>
                         <div class="input-group">
-                            <input id="odoreading" name="odoreading" data-ng-model="odoreading" class="form-control" type="number" required value="{{reading.odoreading}}" placeholder="odometer reading"/>
+                            <input id="odoreading" name="odoreading" data-ng-model="reading.data.odoreading" class="form-control" type="number" required placeholder="odometer reading"/>
                             <div class="input-group-btn">
-                                <select id="distanceunit" data-ng-model="distanceunit" name="distanceunit" class="btn btn-default dropdown-toggle">
+                                <select id="distanceunit" data-ng-model="reading.data.distanceunit" name="distanceunit" class="btn btn-default dropdown-toggle">
                                     <option value="mil" selected>Miles</option>
                                     <option value="kms">KiloMeters</option>
                                 </select>
@@ -27,9 +27,9 @@
                     <div class="form-group">
                         <label for="fuelreading">How much fuel you just filled in your car?</label>
                         <div class="input-group">
-                            <input id="fuelreading" name="fuelreading" data-ng-model="fuelreading" type="number" class="form-control" type="number" value="{{reading.fuelreading}}" required placeholder="station pump reading"/>
+                            <input id="fuelreading" name="fuelreading" data-ng-model="reading.data.fuelreading" type="number" class="form-control" type="number" value="{{reading.data.fuelreading}}" required placeholder="station pump reading"/>
                             <div class="input-group-btn">
-                                <select id="fuelunit" data-ng-model="fuelunit" name="fuelunit" class="btn btn-default dropdown-toggle">
+                                <select id="fuelunit" data-ng-model="reading.data.fuelunit" name="fuelunit" class="btn btn-default dropdown-toggle">
                                     <option value="galn" selected>Gallons</option>
                                     <option value="litr">Litres</option>
                                 </select>
