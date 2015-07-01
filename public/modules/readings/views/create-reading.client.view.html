@@ -11,7 +11,12 @@
                     <div class="form-group">
                         <label for="odoreading">How many miles your car has travelled so far:</label>
                         <div class="input-group">
-                            <input id="odoreading" name="odoreading" data-ng-model="odoreading" class="form-control" type="number" required placeholder="odometer reading"/>
+                            <input id="odoreading" 
+                                   name="odoreading"
+                                   data-ng-model="odoreading"
+                                   class="form-control"
+                                   type="number" required placeholder="odometer reading"
+                                   ng-class="{ 'has-error': newReadingForm.odoreading.$dirty && newReadingForm.odoreading.$invalid }"/>
                             <div class="input-group-btn">
                                 <select id="distanceunit" data-ng-model="distanceunit" name="distanceunit" class="btn btn-default dropdown-toggle">
                                     <option value="mil" selected>Miles</option>
@@ -27,7 +32,8 @@
                     <div class="form-group">
                         <label for="fuelreading">How much fuel you just filled in your car?</label>
                         <div class="input-group">
-                            <input id="fuelreading" name="fuelreading" data-ng-model="fuelreading" type="number" class="form-control" required type="number" placeholder="station pump reading"/>
+                            <input id="fuelreading" name="fuelreading" data-ng-model="fuelreading" type="number" class="form-control" required type="number" placeholder="station pump reading"
+                                   ng-class="{ 'has-error': newReadingForm.fuelreading.$dirty && newReadingForm.fuelreading.$invalid }"/>
                             <div class="input-group-btn">
                                 <select id="fuelunit" data-ng-model="fuelunit" name="fuelunit" class="btn btn-default dropdown-toggle">
                                     <option value="galn" selected>Gallons</option>
