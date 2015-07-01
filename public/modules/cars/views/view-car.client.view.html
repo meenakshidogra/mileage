@@ -5,10 +5,10 @@
                 <span data-ng-bind="car.name"></span>
                 <span data-ng-show="((authentication.user) && (authentication.user._id == car.user._id))">
                     <a class="btn btn-default" href="/#!/cars/{{car._id}}/edit">
-                        <i class="glyphicon glyphicon-edit"></i>
+                        <i class="mdi-image-edit"></i>
                     </a>
                     <a class="btn btn-default" data-ng-click="remove();">
-                        <i class="glyphicon glyphicon-trash"></i>
+                        <i class="mdi-action-delete"></i>
                     </a>
                 </span>
             </h1>
