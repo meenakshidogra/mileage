@@ -1,26 +1,31 @@
 <section data-ng-controller="CarsController" data-ng-init="find()">
-    <div class="list-group">
-        <div class="list-group-item" data-ng-repeat="car in cars" data-ng-show="((authentication.user) && (authentication.user._id == car.user._id))">
-            <a data-ng-href="#!/cars/{{car._id}}">
-                <div class="row-action-primary">
-                    <i class="mdi-maps-directions-car"></i>
-                </div>
-                <div class="row-content">
-                    <!--<div class="least-content"><a data-ng-href="#!/cars/{{car._id}}/edit">Edit</a></div>-->
-                    <h4 class="list-group-item-heading" data-ng-bind="car.name"></h4>
-                    <p class="list-group-item-text" data-ng-bind="car.created | date:'medium'"></p>
-                </div>
-            </a>
-            <div class="list-group-separator"></div>
+    <div class="container">
+        <div class="page-header text-center">
+            <h1>Please choose or add a car first</h1>
         </div>
+        <div class="list-group">
+            <div class="list-group-item" data-ng-repeat="car in cars" data-ng-show="((authentication.user) && (authentication.user._id == car.user._id))">
+                <a data-ng-href="#!/cars/{{car._id}}">
+                    <div class="row-action-primary">
+                        <i class="mdi-maps-directions-car"></i>
+                    </div>
+                    <div class="row-content">
+                        <!--<div class="least-content"><a data-ng-href="#!/cars/{{car._id}}/edit">Edit</a></div>-->
+                        <h4 class="list-group-item-heading" data-ng-bind="car.name"></h4>
+                        <p class="list-group-item-text" data-ng-bind="car.created | date:'medium'"></p>
+                    </div>
+                </a>
+                <div class="list-group-separator"></div>
+            </div>
+        </div>
+        <div class="alert alert-warning text-center" data-ng-hide="!cars.$resolved || cars.length">
+            No Cars yet, why don't you <a href="/#!/cars/create">create one</a>?
+        </div>
+        <a data-ng-href="/#!/cars/create"
+           title="Add a new car"
+           data-toggle="tooltip" data-placement="left" data-original-title="Tooltip on left"
+                                                       class="btn btn-fab btn-raised btn-primary pull-right">
+            <i class="mdi-content-add"></i>
+        </a>
     </div>
-    <div class="alert alert-warning text-center" data-ng-hide="!cars.$resolved || cars.length">
-        No Cars yet, why don't you <a href="/#!/cars/create">create one</a>?
-    </div>
-    <a data-ng-href="/#!/cars/create"
-        title="Add a new car"
-        data-toggle="tooltip" data-placement="left" data-original-title="Tooltip on left"
-        class="btn btn-fab btn-raised btn-primary pull-right">
-        <i class="mdi-content-add"></i>
-    </a>
 </section>
