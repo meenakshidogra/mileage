@@ -18,13 +18,18 @@ module.exports = {
 			],
 			js: [
 				'public/lib/angular/angular.js',
-				'public/lib/angular-resource/angular-resource.js', 
-				'public/lib/angular-cookies/angular-cookies.js', 
-				'public/lib/angular-animate/angular-animate.js', 
-				'public/lib/angular-touch/angular-touch.js', 
-				'public/lib/angular-sanitize/angular-sanitize.js', 
+				'public/lib/angular-resource/angular-resource.js',
+				'public/lib/angular-cookies/angular-cookies.js',
+				'public/lib/angular-animate/angular-animate.js',
+				'public/lib/angular-touch/angular-touch.js',
+				'public/lib/angular-sanitize/angular-sanitize.js',
 				'public/lib/angular-ui-router/release/angular-ui-router.js',
 				'public/lib/angular-ui-utils/ui-utils.js',
+				'public/lib/jquery/dist/jquery.min.js',
+				'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js',
+				'public/lib/material-ui/material.min.js',
+				'public/lib/material-ui/ripples.min.js',
+				'public/lib/material-ui/main.js',
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js'
 			]
 		},
