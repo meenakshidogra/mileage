@@ -57,7 +57,8 @@ angular.module('readings')
 
                         // Redirect after save
                         reading.$save(function(response) {
-                            $location.path('readings/' + response._id);
+                            //$location.path('readings/' + response._id);
+                            $location.path('cars/' + response.car);
 
                             // Clear form fields
                             $scope.odoreading = '';
@@ -82,7 +83,7 @@ angular.module('readings')
                             }
                         } else {
                             $scope.reading.$remove(function() {
-                                $location.path('readings');
+                                $location.path('cars/' + $scope.selectedcar._id);
                             });
                         }
                     };
@@ -92,7 +93,7 @@ angular.module('readings')
                         var reading = $scope.reading;
                         console.log(reading);
                         reading.$update(function() {
-                            $location.path('readings/' + reading._id);
+                            $location.path('cars/' + reading.car._id);
                         }, function(errorResponse) {
                             $scope.error = errorResponse.data.message;
                         });
@@ -130,6 +131,11 @@ angular.module('readings')
                             }).error(function() {
                             }
                         );
+                    };
+
+                    //Function which takes you to the readings details page
+                    $scope.showDetails = function (reading) {
+                        $location.path('readings/'+ reading._id);
                     }
                 }
             ]);

@@ -1,36 +1,39 @@
 <section data-ng-controller="ReadingsController" data-ng-init="findOne()">
     <div class="container">
-	<div class="page-header">
-        <h1>
-            Reading details
-        </h1>
-	</div>
-	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == reading.user._id))">
-		<a class="btn btn-primary" href="/#!/readings/{{reading._id}}/edit">
-			<i class="glyphicon glyphicon-edit"></i>
-		</a>
-		<a class="btn btn-primary" data-ng-click="remove();">
-			<i class="glyphicon glyphicon-trash"></i>
-		</a>
-	</div>
-	<small>
+        <div class="page-header">
+            <h1>
+                Reading details
+            </h1>
+        </div>
+        <div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == reading.user._id))">
+            <a class="btn btn-primary" href="/#!/readings/{{reading._id}}/edit">
+                <i class="mdi-image-edit"></i>
+            </a>
+            <a class="btn btn-primary" data-ng-click="remove();">
+                <i class="mdi-action-delete"></i>
+            </a>
+        </div>
+        <p>
         Odometer reading
-		<em class="text-muted">
-            <span data-ng-bind="reading.odoreading"></span>.
-			Posted on
-			<span data-ng-bind="reading.created | date:'mediumDate'"></span>
-			for
-			<span data-ng-bind="reading.car.name"></span>
-		</em>
-	</small>
-    <p>
-	<small>
+        <em class="text-muted">
+            <span data-ng-bind="reading.odoreading"></span>
+            <span data-ng-bind="reading.distanceunit"></span>
+        </em>
+        </p>
+        <p>
         Fuel reading
-		<em class="text-muted">
-			<span data-ng-bind="reading.fuelreading"></span>
-			<span data-ng-bind="reading.fuelunit"></span>
-		</em>
-	</small>
-    </p>
+        <em class="text-muted">
+            <span data-ng-bind="reading.fuelreading"></span>
+            <span data-ng-bind="reading.fuelunit"></span>
+        </em>
+        </p>
+        <p>
+        Posted on
+        <em class="text-muted">
+        <span data-ng-bind="reading.created | date:'mediumDate'"></span>
+        for
+        <span data-ng-bind="reading.car.name"></span>
+        </em>
+        </p>
     </div>
 </section>

@@ -1,7 +1,7 @@
 <section data-ng-controller="CarsController" data-ng-init="find()">
     <div class="container">
         <div class="page-header text-center">
-            <h1>Please choose or add a car first</h1>
+            <h1>Which car?</h1>
         </div>
         <div class="list-group">
             <div class="list-group-item" data-ng-repeat="car in cars" data-ng-show="((authentication.user) && (authentication.user._id == car.user._id))">
@@ -22,7 +22,7 @@
             No Cars yet, why don't you <a href="/#!/cars/create">create one</a>?
         </div>
         <a data-ng-href="/#!/cars/create"
-           title="Add a new car"
+           title=""
            data-toggle="tooltip"
            data-placement="left"
            data-original-title="Tooltip on left"
