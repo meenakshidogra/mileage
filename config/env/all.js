@@ -14,7 +14,9 @@ module.exports = {
 		lib: {
 			css: [
 				'public/lib/bootstrap/dist/css/bootstrap.css',
-				'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+                'public/lib/bootstrap-material-design/dist/css/roboto.min.css',
+                'public/lib/bootstrap-material-design/dist/css/material.min.css',
+                'public/lib/bootstrap-material-design/dist/css/ripples.min.css',
 			],
 			js: [
 				'public/lib/angular/angular.js',
@@ -25,12 +27,10 @@ module.exports = {
 				'public/lib/angular-sanitize/angular-sanitize.js',
 				'public/lib/angular-ui-router/release/angular-ui-router.js',
 				'public/lib/angular-ui-utils/ui-utils.js',
-				'public/lib/jquery/dist/jquery.min.js',
-				'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js',
-				'public/lib/material-ui/material.min.js',
-				'public/lib/material-ui/ripples.min.js',
-				'public/lib/material-ui/main.js',
-				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js'
+				'public/lib/bootstrap-material-design/dist/js/material.min.js',
+				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
+                'public/lib/bootstrap-material-design/dist/js/material.js',
+                'public/lib/bootstrap-material-design/dist/js/ripples.js',
 			]
 		},
 		css: [
