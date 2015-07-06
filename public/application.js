@@ -19,5 +19,8 @@ angular.element(document).ready(function() {
 	angular.bootstrap(document, [ApplicationConfiguration.applicationModuleName]);
 
     //init the material design
+    $.material.init();
+    $.material.ripples();
+    $.material.input();
     //angular.element('')
 });

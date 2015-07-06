@@ -27,10 +27,10 @@ module.exports = {
 				'public/lib/angular-sanitize/angular-sanitize.js',
 				'public/lib/angular-ui-router/release/angular-ui-router.js',
 				'public/lib/angular-ui-utils/ui-utils.js',
-				'public/lib/bootstrap-material-design/dist/js/material.min.js',
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
-                'public/lib/bootstrap-material-design/dist/js/material.js',
-                'public/lib/bootstrap-material-design/dist/js/ripples.js',
+				'public/lib/jquery/dist/jquery.min.js',
+				'public/lib/bootstrap-material-design/dist/js/material.min.js',
+                'public/lib/bootstrap-material-design/dist/js/ripples.min.js',
 			]
 		},
 		css: [
