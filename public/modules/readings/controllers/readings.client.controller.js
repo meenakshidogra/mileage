@@ -8,7 +8,8 @@ angular.module('readings')
                     $scope.authentication = Authentication;
                     $scope.cars = Cars.query();
                     $scope.selectedcar = Shared.getSelectedCar();
-
+                    $scope.distanceunit = 'mil';
+                    $scope.fuelunit = 'galn';
                     /*calculate the fuel economy here and put it in req.reading.mileage variable*/
                     /**
                      ** getMileage
