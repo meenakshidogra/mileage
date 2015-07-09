@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container-fluid .jumbotron {
-    background: #1976D2;
+    background: #00bfa5;
 
     /*background: -webkit-linear-gradient(30deg, #360033 10%, #0b8793 90%); [> Chrome 10+, Saf5.1+ <]*/
     /*background:    -moz-linear-gradient(30deg, #360033 10%, #0b8793 90%); [> FF3.6+ <]*/
@@ -66,10 +66,10 @@ h1, h2, h3, h4, h5, h6 {
     border-color: transparent;
 }
 .navbar-fixed-top {
-    border: 1px solid #000;
+    border: 1px solid #009688;
 }
 .table-hover>tbody>tr:hover {
-    background-color: #BBDEFB;
+    background-color: #e0f2f1;
     cursor: pointer;
 }
 .list-group .list-group-item .row-content {
@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid rgba(0,0,0,.1)
 }
 .list-group .list-group-item:hover {
-    background: #BBDEFB;
+    background: #e0f2f1;
 }
 
 @media (max-width: 767px) {
