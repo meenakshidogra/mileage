@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-icon {
     font-size: 104px;
-    color: #4caf50;
+    color: #eceff1;
     text-shadow: 0 3px 10px rgba(0,0,0,0.23),0 3px 10px rgba(0,0,0,0.16);
 }
 
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container-fluid .jumbotron {
-    background: #00bfa5;
+    background: #7cb342 ;
 
     /*background: -webkit-linear-gradient(30deg, #360033 10%, #0b8793 90%); [> Chrome 10+, Saf5.1+ <]*/
     /*background:    -moz-linear-gradient(30deg, #360033 10%, #0b8793 90%); [> FF3.6+ <]*/
@@ -69,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid #009688;
 }
 .table-hover>tbody>tr:hover {
-    background-color: #e0f2f1;
+    background-color: #BBDEFB;
     cursor: pointer;
 }
 .list-group .list-group-item .row-content {
@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid rgba(0,0,0,.1)
 }
 .list-group .list-group-item:hover {
-    background: #e0f2f1;
+    background: #BBDEFB;
 }
 
 @media (max-width: 767px) {
