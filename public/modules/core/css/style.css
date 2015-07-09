@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .content {
-    margin-top: 52px;
+    margin-top: 51px;
 }
 #mileageForm {
     padding: 0 0 20px;
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container-fluid .jumbotron {
-    background: #7cb342 ;
+    background: #7986cb ;
 
     /*background: -webkit-linear-gradient(30deg, #360033 10%, #0b8793 90%); [> Chrome 10+, Saf5.1+ <]*/
     /*background:    -moz-linear-gradient(30deg, #360033 10%, #0b8793 90%); [> FF3.6+ <]*/
@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
     border-color: transparent;
 }
 .navbar-fixed-top {
-    border: 1px solid #009688;
+    border: 0 none;
 }
 .table-hover>tbody>tr:hover {
     background-color: #BBDEFB;
