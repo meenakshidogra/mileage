@@ -1,58 +1,109 @@
 <section class="container" data-ng-controller="AuthenticationController">
-    <div class="col-md-6">
-        <h3 class="col-md-12 text-center">Sign up using your social accounts</h3>
-        <div class="col-md-12 text-center">
-            <a href="/auth/facebook" class="undecorated-link">
-                <img src="/modules/users/img/buttons/facebook.png">
-            </a>
-            <a href="/auth/twitter" class="undecorated-link">
-                <img src="/modules/users/img/buttons/twitter.png">
-            </a>
-            <a href="/auth/google" class="undecorated-link">
-                <img src="/modules/users/img/buttons/google.png">
-            </a>
-            <a href="/auth/linkedin" class="undecorated-link">
-                <img src="/modules/users/img/buttons/linkedin.png">
-            </a>
-            <a href="/auth/github" class="undecorated-link">
-                <img src="/modules/users/img/buttons/github.png">
-            </a>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <h3 class="col-md-12 text-center">Or with your email</h3>
-        <div class="col-md-12">
-            <form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
-                <fieldset>
-                    <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" required id="firstName" name="firstName" class="form-control" data-ng-model="credentials.firstName" placeholder="First Name">
+    <!--<div class="col-md-6">-->
+    <!--<h3 class="col-md-12 text-center">Sign up using your social accounts</h3>-->
+    <!--<div class="col-md-12 text-center">-->
+    <!--<a href="/auth/facebook" class="undecorated-link">-->
+    <!--<img src="/modules/users/img/buttons/facebook.png">-->
+    <!--</a>-->
+    <!--<a href="/auth/twitter" class="undecorated-link">-->
+    <!--<img src="/modules/users/img/buttons/twitter.png">-->
+    <!--</a>-->
+    <!--<a href="/auth/google" class="undecorated-link">-->
+    <!--<img src="/modules/users/img/buttons/google.png">-->
+    <!--</a>-->
+    <!--<a href="/auth/linkedin" class="undecorated-link">-->
+    <!--<img src="/modules/users/img/buttons/linkedin.png">-->
+    <!--</a>-->
+    <!--<a href="/auth/github" class="undecorated-link">-->
+    <!--<img src="/modules/users/img/buttons/github.png">-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--</div>-->
+    <h1 class="row top-gutter text-center">Sign up</h1>
+    <div class="row top-gutter-half">
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
+                    <div class="form-control-wrapper">
+                        <input type="text" 
+                               id="firstName" 
+                               name="firstName" 
+                               data-ng-model="credentials.firstName"
+                               class="form-control empty" />
+                        <div class="floating-label">First Name</div>
+                        <span class="material-input"></span>
                     </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="credentials.lastName" placeholder="Last Name">
+                    <!--<div class="form-group">-->
+                    <!--<label for="firstName">First Name</label>-->
+                    <!--<input type="text" required id="firstName" name="firstName" class="form-control" data-ng-model="credentials.firstName" placeholder="First Name">-->
+                    <!--</div>-->
+                    <div class="form-control-wrapper">
+                        <input type="text" 
+                               id="lastName" 
+                               name="lastName" 
+                               data-ng-model="credentials.lastName"
+                               class="form-control empty" />
+                        <div class="floating-label">Last Name</div>
+                        <span class="material-input"></span>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email" placeholder="Email">
+                    <!--<div class="form-group">-->
+                    <!--<label for="lastName">Last Name</label>-->
+                    <!--<input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="credentials.lastName" placeholder="Last Name">-->
+                    <!--</div>-->
+                    <div class="form-control-wrapper">
+                        <input type="text" 
+                               id="email" 
+                               name="email" 
+                               data-ng-model="credentials.email"
+                               class="form-control empty" />
+                        <div class="floating-label">Email</div>
+                        <span class="material-input"></span>
                     </div>
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username">
+                    <!--<div class="form-group">-->
+                    <!--<label for="email">Email</label>-->
+                    <!--<input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email" placeholder="Email">-->
+                    <!--</div>-->
+                    <div class="form-control-wrapper">
+                        <input type="text" 
+                               id="username" 
+                               name="username" 
+                               data-ng-model="credentials.username"
+                               class="form-control empty" />
+                        <div class="floating-label">Username</div>
+                        <span class="material-input"></span>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
+                    <!--<div class="form-group">-->
+                    <!--<label for="username">Username</label>-->
+                    <!--<input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username">-->
+                    <!--</div>-->
+                    <div class="form-control-wrapper">
+                        <input type="text" 
+                               id="password" 
+                               name="password" 
+                               data-ng-model="credentials.password"
+                               class="form-control empty" />
+                        <div class="floating-label">Password</div>
+                        <span class="material-input"></span>
                     </div>
+                    <!--<div class="form-group">-->
+                    <!--<label for="password">Password</label>-->
+                    <!--<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">-->
+                    <!--</div>-->
                     <div class="text-center form-group">
-                        <button type="submit" class="btn btn-large btn-primary">Sign up</button>&nbsp; or&nbsp;
-                        <a href="/#!/signin" class="show-signup">Sign in</a>
+                        <button type="submit" class="btn btn-large btn-primary">Sign up</button>
                     </div>
                     <div data-ng-show="error" class="text-center text-danger">
                         <strong data-ng-bind="error"></strong>
                     </div>
-                </fieldset>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
+    <div class="row clearfix top-gutter">
+        <div class="col-md-offset-4 col-md-4 text-center">
+            <p>Already have an account?</p>
+            <a class="btn btn-black" href="/#!/signin" class="show-signup">Log in</a>
+        </div>
+    </div>
+
 </section>
