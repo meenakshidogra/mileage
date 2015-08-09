@@ -95,6 +95,17 @@ h1, h2, h3, h4, h5, h6 {
     top: 2px;
     right: 8px;
 }
+.face-block {
+    position: relative;
+}
+.face {
+    font-size: 160px;
+    line-height: 1;
+}
+.face-unit {
+    position: relative;
+    top:-20px;
+}
 
 @media (max-width: 767px) {
     body {
