@@ -8,47 +8,98 @@
         <div class="col-md-12">
             <form class="form-horizontal" name="newReadingForm" data-ng-submit="create()" novalidate>
                 <fieldset>
-                    <div class="form-group">
-                        <label for="odoreading">How many miles your car has travelled so far:</label>
-                        <div class="input-group">
-                            <input id="odoreading" 
-                                   name="odoreading"
-                                   data-ng-model="odoreading"
-                                   class="form-control"
-                                   type="number" required placeholder="odometer reading"
-                                   ng-class="{ 'has-error': newReadingForm.odoreading.$dirty && newReadingForm.odoreading.$invalid }"/>
-                            <div class="input-group-btn">
-                                <select id="distanceunit" data-ng-model="distanceunit" name="distanceunit" class="btn btn-default dropdown-toggle">
-                                    <option value="mil" selected>Miles</option>
-                                    <option value="kms">KiloMeters</option>
-                                </select>
-                            </div>
-                        </div>
-                        <p data-ng-show="newReadingForm.odoreading.$invalid && !newReadingForm.odoreading.$pristine"
-                           class="text-danger">Please enter a valid Odometer reading.
-                        </p>
+                    <div class="form-control-wrapper">
+                        <input id="odoreading" 
+                               name="odoreading" 
+                               data-ng-model="odoreading"
+                               type="number"
+                               required
+                               ng-class="{ 'has-error': newReadingForm.odoreading.$dirty && newReadingForm.odoreading.$invalid }"
+                               class="form-control empty" />
+                            <div class="hint">How many miles your car has travelled so far:</div>
+                            <div class="floating-label">Odometer Reading</div>
+                            <span class="material-input"></span>
+                    </div>
+                    <div class="form-control-wrapper">
+                        <select id="distanceunit"
+                                data-ng-model="distanceunit" 
+                                name="distanceunit" 
+                                class="form-control">
+                            <option value="mil" selected>Miles</option>
+                            <option value="kms">KiloMeters</option>
+                        </select>
+                    </div>
+                    <p data-ng-show="newReadingForm.odoreading.$invalid && !newReadingForm.odoreading.$pristine"
+                       class="text-danger">Please enter a valid Odometer reading.
+                    </p>
+                    <!--<div class="form-group">-->
+                        <!--<label for="odoreading"></label>-->
+                        <!--<div class="input-group">-->
+                            <!--<input id="odoreading" -->
+                                   <!--name="odoreading"-->
+                                   <!--data-ng-model="odoreading"-->
+                                   <!--class="form-control"-->
+                                   <!--type="number" required placeholder="odometer reading"-->
+                                   <!--ng-class="{ 'has-error': newReadingForm.odoreading.$dirty && newReadingForm.odoreading.$invalid }"/>-->
+                            <!--<div class="input-group-btn">-->
+                                <!--<select id="distanceunit" data-ng-model="distanceunit" name="distanceunit" class="btn btn-default dropdown-toggle">-->
+                                    <!--<option value="mil" selected>Miles</option>-->
+                                    <!--<option value="kms">KiloMeters</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<p data-ng-show="newReadingForm.odoreading.$invalid && !newReadingForm.odoreading.$pristine"-->
+                           <!--class="text-danger">Please enter a valid Odometer reading.-->
+                        <!--</p>-->
+                    <!--</div>-->
+                    <div class="form-control-wrapper">
+                        <input id="fuelreading" 
+                               name="fuelreading" 
+                               data-ng-model="fuelreading"
+                               type="number"
+                               required
+                               ng-class="{ 'has-error': newReadingForm.fuelreading.$dirty && newReadingForm.fuelreading.$invalid }"
+                               class="form-control empty" />
+                            <div class="hint">How much fuel you just filled in your car?</div>
+                            <div class="floating-label">Fuel Reading</div>
+                            <span class="material-input"></span>
+                    </div>
+                    <div class="form-control-wrapper">
+                        <select id="fuelunit"
+                                data-ng-model="fuelunit" 
+                                name="fuelunit" 
+                                class="form-control">
+                            <option value="galn" selected>Gallons</option>
+                            <option value="litr">Litres</option>
+                        </select>
+                    </div>
+                    <p data-ng-show="newReadingForm.fuelreading.$invalid && !newReadingForm.fuelreading.$pristine"
+                       class="text-danger">Please enter a valid amount of fuel filled.
+                    </p>
+                    <!--<div class="form-group">-->
+                        <!--<label for="fuelreading">How much fuel you just filled in your car?</label>-->
+                        <!--<div class="input-group">-->
+                            <!--<input id="fuelreading" name="fuelreading" data-ng-model="fuelreading" type="number" class="form-control" required type="number" placeholder="station pump reading"-->
+                                   <!--ng-class="{ 'has-error': newReadingForm.fuelreading.$dirty && newReadingForm.fuelreading.$invalid }"/>-->
+                            <!--<div class="input-group-btn">-->
+                                <!--<select id="fuelunit" data-ng-model="fuelunit" name="fuelunit" class="btn btn-default dropdown-toggle">-->
+                                    <!--<option value="galn" selected>Gallons</option>-->
+                                    <!--<option value="litr">Litres</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<p data-ng-show="newReadingForm.fuelreading.$invalid && !newReadingForm.fuelreading.$pristine"-->
+                           <!--class="text-danger">Please enter a valid amount of fuel filled.-->
+                        <!--</p>-->
+
+                    <!--</div>-->
+                    <div class="text-center form-group">
+                        <button type="submit" data-ng-disabled="newReadingForm.$invalid" class="btn btn-primary">Submit</button>
                     </div>
 
-                    <div class="form-group">
-                        <label for="fuelreading">How much fuel you just filled in your car?</label>
-                        <div class="input-group">
-                            <input id="fuelreading" name="fuelreading" data-ng-model="fuelreading" type="number" class="form-control" required type="number" placeholder="station pump reading"
-                                   ng-class="{ 'has-error': newReadingForm.fuelreading.$dirty && newReadingForm.fuelreading.$invalid }"/>
-                            <div class="input-group-btn">
-                                <select id="fuelunit" data-ng-model="fuelunit" name="fuelunit" class="btn btn-default dropdown-toggle">
-                                    <option value="galn" selected>Gallons</option>
-                                    <option value="litr">Litres</option>
-                                </select>
-                            </div>
-                        </div>
-                        <p data-ng-show="newReadingForm.fuelreading.$invalid && !newReadingForm.fuelreading.$pristine"
-                           class="text-danger">Please enter a valid amount of fuel filled.
-                        </p>
-
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" data-ng-disabled="newReadingForm.$invalid" class="btn btn-primary">
-                    </div>
+                    <!--<div class="form-group">-->
+                        <!--<input type="submit" data-ng-disabled="newReadingForm.$invalid" class="btn btn-primary">-->
+                    <!--</div>-->
                 </fieldset>
             </form>
         </div>
