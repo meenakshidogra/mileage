@@ -2571,7 +2571,10 @@ body.inverse .card .form-control {
   background-color: initial;
   color: initial;
 }
-body,
+body {
+  font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
 h1,
 h2,
 h3,
@@ -2582,11 +2585,7 @@ h6,
 .h2,
 .h3,
 .h4 {
-  font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-}
-h5,
-h6 {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
 a,

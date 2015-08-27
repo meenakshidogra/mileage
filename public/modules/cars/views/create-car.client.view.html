@@ -6,20 +6,33 @@
         <div class="col-md-12">
             <form class="form-horizontal" data-ng-submit="create()" novalidate>
                 <fieldset>
-                    <div class="form-group">
-                        <label class="control-label" for="name">Name</label>
-                        <div class="controls">
-                            <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
-                        </div>
+                    <div class="form-control-wrapper">
+                        <input type="text" 
+                               id="name" 
+                               name="name" 
+                               data-ng-model="name"
+                               class="form-control empty" />
+                            <div class="floating-label">Name</div>
+                            <span class="material-input"></span>
                     </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-default">
+                    <!--<div class="form-group">-->
+                        <!--<label class="control-label" for="name">Name</label>-->
+                        <!--<div class="controls">-->
+                            <!--<input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="text-center form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
+                    <!--<div class="form-group">-->
+                        <!--<input type="submit" class="btn btn-default">-->
+                    <!--</div>-->
                     <div data-ng-show="error" class="text-danger">
                         <strong data-ng-bind="error"></strong>
                     </div>
                 </fieldset>
             </form>
         </div>
+        <p class="text-muted">In future, we'll add the functionality to add the image using the type/model of the car</p>
     </div>
 </section>
