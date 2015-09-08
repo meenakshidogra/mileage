@@ -125,7 +125,10 @@ h1, h2, h3, h4, h5, h6 {
 .featurette {
     overflow: hidden;
 }
-
+.featurette-image {
+  width: 250px;
+  height: 250px;
+}
 .featurette-image.pull-left {
     margin-right: 40px;
 }
